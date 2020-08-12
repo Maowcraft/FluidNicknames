@@ -1,6 +1,7 @@
 package maowcraft.fluidnicknames.command;
 
 import maowcraft.fluidnicknames.util.NicknameUtil;
+import maowcraft.fluidnicknames.util.Permissions;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +13,7 @@ public class CommandNickname implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (player.hasPermission("fluidnicknames.nickname")) {
+            if (player.hasPermission(Permissions.FLUIDNICKNAMES_NICKNAME)) {
                 if (args.length != 0) {
                     String nickname = ChatColor.translateAlternateColorCodes('&', args[0] + "&r");
                     NicknameUtil.setNickname(player, nickname);
