@@ -12,7 +12,7 @@ public class CommandNickname implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (player.hasPermission("nickname.use")) {
+            if (player.hasPermission("fluidnicknames.nickname")) {
                 if (args.length != 0) {
                     String nickname = ChatColor.translateAlternateColorCodes('&', args[0] + "&r");
                     NicknameUtil.setNickname(player, nickname);
